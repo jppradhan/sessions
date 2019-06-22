@@ -1,6 +1,6 @@
-import React, { useState, useCallback, memo } from "react";
-import { Button, Alert } from "styled-bootstrap-components";
-import styled from "styled-components";
+import React, { useState, useCallback, memo } from 'react';
+import { Button, Alert } from 'styled-bootstrap-components';
+import styled from 'styled-components';
 
 const CustomButtom = memo(styled(Button)`
   margin: 0 5px;
@@ -27,9 +27,7 @@ const Counter = () => {
   const increment1 = useCallback(() => setC1(c1 + 1), [c1]);
   const increment2 = useCallback(() => setC2(c2 + 1), [c2]);
 
-  const addItems = useCallback(() => setItems([...items, items.length + 1]), [
-    items
-  ]);
+  const addItems = useCallback(() => setItems([...items, items.length + 1]), [items]);
 
   functions.add(increment1);
   functions.add(increment2);
