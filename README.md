@@ -6,3 +6,7 @@
 4. `npm start`
 
 ## Find example here: http://google.com
+
+## Hooks references
+
+1. https://kentcdodds.com/blog/usememo-and-usecallback

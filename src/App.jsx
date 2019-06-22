@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Container, Navbar, Nav, NavbarLink } from 'styled-bootstrap-components';
 import Home from 'pages/home';
 import Hooks from 'pages/hooks';
+import { CustomLink } from 'components/Common';
 
 function App() {
   return (
@@ -10,12 +11,8 @@ function App() {
       <Container fluid>
         <Navbar dark>
           <Nav>
-            <Link to='/'>
-              <NavbarLink dark>Home</NavbarLink>
-            </Link>
-            <Link to='/hooks'>
-              <NavbarLink dark>Hooks</NavbarLink>
-            </Link>
+            <CustomLink to='/'>Home</CustomLink>
+            <CustomLink to='/hooks'>Hooks</CustomLink>
           </Nav>
         </Navbar>
         <Route path='/' exact component={Home} />
