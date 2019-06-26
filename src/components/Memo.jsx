@@ -1,10 +1,19 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { PureComponent, memo, useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Container } from 'styled-bootstrap-components';
 
 // const PureButton = memo(({ count }) => {
 //   return <CustomButtom>Pure button count: {count}</CustomButtom>;
 // });
+
+// class PureButton extends PureComponent {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return <CustomButtom>Pure button: {this.props.count}</CustomButtom>;
+//   }
+// }
 
 const PureButton = ({ count }) => <CustomButtom>Pure button: {count}</CustomButtom>;
 
