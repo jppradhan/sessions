@@ -1,55 +1,34 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { Button, Alert } from 'styled-bootstrap-components';
+import React, { useState, useCallback, memo } from 'react';
+import { Button } from 'styled-bootstrap-components';
 import styled from 'styled-components';
 import { SpacedContainer } from 'components/Common';
 
 const UseCallback = () => {
-  const [items, setItems] = useState([]);
+  const [toggle, setToggle] = useState(false);
 
-  const updatedItems = useMemo(() => items, [items.length]);
+  const otherClick = () => {
+    console.log('Cliked here....');
+  };
+
+  // const otherClick = useCallback(() => {
+  //   console.log('Cliked here....');
+  // }, []);
 
   return (
     <SpacedContainer>
-      <Br />
       <div>
-        <CustomButtom onClick={() => setItems([...items, items.length + 1])}>
-          Add items
+        <CustomButtom onClick={() => setToggle(!toggle)}>Toggle</CustomButtom>
+        <CustomButtom primary onClick={otherClick}>
+          Pure button
         </CustomButtom>
-        <CustomButtom primary onClick={() => setItems([1, 2, 3, 4, 5])}>
-          Add same items
-        </CustomButtom>
+        <p>{toggle ? 'ON' : 'OFF'}</p>
       </div>
-      <List items={updatedItems} />
     </SpacedContainer>
   );
 };
 
-const List = ({ items }) => {
-  useEffect(() => {
-    console.log('New item added....');
-  }, [items]);
-
-  return (
-    <ListWrapper>
-      {items.map(item => (
-        <Alert key={item} success>
-          Sample item: {item}
-        </Alert>
-      ))}
-    </ListWrapper>
-  );
-};
-
-const CustomButtom = styled(Button)`
+const CustomButtom = memo(styled(Button)`
   margin: 10px;
-`;
-
-const ListWrapper = styled.div`
-  width: 500px;
-`;
-
-const Br = styled.div`
-  padding: 10px;
-`;
+`);
 
 export default UseCallback;

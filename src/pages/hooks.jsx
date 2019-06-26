@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Nav, NavLink } from 'styled-bootstrap-components';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Container, Nav } from 'styled-bootstrap-components';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import UseCallback from 'components/UseCallback';
 import UseMemo from 'components/UseMemo';
 import Memo from 'components/Memo';

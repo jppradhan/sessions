@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Container, Navbar, Nav, NavbarLink } from 'styled-bootstrap-components';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Container, Navbar, Nav } from 'styled-bootstrap-components';
 import Home from 'pages/home';
 import Hooks from 'pages/hooks';
 import { CustomLink } from 'components/Common';

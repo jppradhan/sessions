@@ -1,23 +1,23 @@
 import React, { memo, useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { Button } from 'styled-bootstrap-components';
+import { Button, Container } from 'styled-bootstrap-components';
 
-const CountButton = memo(({ onClick, count }) => {
-  return <CustomButtom onClick={onClick}>counter {count}</CustomButtom>;
-});
+// const PureButton = memo(({ count }) => {
+//   return <CustomButtom>Pure button count: {count}</CustomButtom>;
+// });
+
+const PureButton = ({ count }) => <CustomButtom>Pure button: {count}</CustomButtom>;
 
 const DualCounter = () => {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
+  const [count, setCount] = useState(0);
 
-  const increment1 = useCallback(() => setCount1(c => c + 1), []);
-  const increment2 = useCallback(() => setCount2(c => c + 1), []);
+  const increment = () => setCount(c => c + 1);
 
   return (
-    <>
-      <CountButton count={count1} onClick={increment1} />
-      <CountButton count={count2} onClick={increment2} />
-    </>
+    <Container>
+      <CustomButtom onClick={increment}>COUNTER: {count}</CustomButtom>
+      <PureButton count={10} />
+    </Container>
   );
 };
 
